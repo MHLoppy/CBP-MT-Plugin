@@ -139,7 +139,7 @@ namespace CBP_MT_Plugin
 
         public void UpdatePlugin(string workshopModsPath, string localModsPath)
         {
-            //do nothing, since this plugin is automatically updated alongside CBP when new CBP files are downloaded via Steam Workshop
+            //not needed, so do nothing - plugin itself is kept updated by Steam
         }
 
         private void BackupSoundXML()
