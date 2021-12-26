@@ -62,8 +62,8 @@
         <Rectangle Grid.Row="1" Grid.ColumnSpan="3" Fill="Gray"/>
 
         <StackPanel Grid.Row="2" Grid.ColumnSpan="3">
-            <TextBlock  Text="Current selection for each category is highlighted (if using custom tracks, your track list won't match any of the options)."/>
-            <TextBlock  Text="Rise of Babel users may note that their default music tracklists are from the original game instead of T&amp;P/EE (a bug with RoB)." Margin="0,6,0,0"/>
+            <TextBlock Text="The current selection for each category is in bold (if using custom tracks, your track list won't match any of the options)."/>
+            <TextBlock Text="Rise of Babel users may note that their default music tracklists are from the original game instead of T&amp;P/EE (a bug with RoB)." Margin="0,6,0,0"/>
         </StackPanel>
     </Grid>
 </Window>

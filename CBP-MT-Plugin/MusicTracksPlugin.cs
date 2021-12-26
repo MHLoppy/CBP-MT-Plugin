@@ -13,7 +13,7 @@ namespace CBP_MT_Plugin
     {
         public string PluginTitle => "Music Track Selector";
 
-        public string PluginVersion => "0.1.0";
+        public string PluginVersion => "0.2.0";
 
         public string PluginAuthor => "MHLoppy";
 

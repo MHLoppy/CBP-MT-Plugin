@@ -231,6 +231,7 @@ namespace CBP_MT_Plugin
             DataContext = this;
 
             CleanFile();
+            HighlightSelection();
         }
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -266,7 +267,76 @@ namespace CBP_MT_Plugin
             {
                 MessageBox.Show("Error cleaning XML file: " + ex);
             }
+        }
 
+        private void HighlightSelection()
+        {
+            // reset weights
+            MenuOldButton.FontWeight = FontWeights.Normal;
+            MenuNewButton.FontWeight = FontWeights.Normal;
+            MenuCombinedButton.FontWeight = FontWeights.Normal;
+            LosingOldButton.FontWeight = FontWeights.Normal;
+            LosingNewButton.FontWeight = FontWeights.Normal;
+            EconomicOldButton.FontWeight = FontWeights.Normal;
+            EconomicNewButton.FontWeight = FontWeights.Normal;
+
+            List<string> currentMenu = new List<string>();
+            List<string> currentLosing = new List<string>();
+            List<string> currentEconomic = new List<string>();
+
+            doc.Load(SoundXML);
+
+            // get current menu tracks, then compare if it matches any of the presets
+            XmlNode trackList = doc.SelectSingleNode(@"ROOT/TRACKS/INTROS");
+            foreach (XmlNode track in trackList.ChildNodes)
+            {
+                XmlAttribute trackFile = track.Attributes["file"];
+                currentMenu.Add(trackFile.Value);
+            }
+            if (Enumerable.SequenceEqual(currentMenu.OrderBy(e => e), knownIntrosVanilla.OrderBy(e => e))) //https://www.techiedelight.com/compare-two-lists-for-equality-csharp/
+            {
+                MenuOldButton.FontWeight = FontWeights.Bold;
+            }
+            else if (Enumerable.SequenceEqual(currentMenu.OrderBy(e => e), knownIntrosTaP.OrderBy(e => e)))
+            {
+                MenuNewButton.FontWeight = FontWeights.Bold;
+            }
+            else if (Enumerable.SequenceEqual(currentMenu.OrderBy(e => e), knownIntrosCombined.OrderBy(e => e)))
+            {
+                MenuCombinedButton.FontWeight = FontWeights.Bold;
+            }
+
+            // get current menu tracks, then compare if it matches any of the presets
+            trackList = doc.SelectSingleNode(@"ROOT/TRACKS/TRIBE/AGE/MOOD[2]");
+            foreach (XmlNode track in trackList.ChildNodes)
+            {
+                XmlAttribute trackFile = track.Attributes["file"];
+                currentLosing.Add(trackFile.Value);
+            }
+            if (Enumerable.SequenceEqual(currentMenu.OrderBy(e => e), knownIntrosVanilla.OrderBy(e => e)))
+            {
+                LosingOldButton.FontWeight = FontWeights.Bold;
+            }
+            else if (Enumerable.SequenceEqual(currentMenu.OrderBy(e => e), knownIntrosTaP.OrderBy(e => e)))
+            {
+                LosingNewButton.FontWeight = FontWeights.Bold;
+            }
+
+            // get current menu tracks, then compare if it matches any of the presets
+            trackList = doc.SelectSingleNode(@"ROOT/TRACKS/TRIBE/AGE/MOOD[3]");
+            foreach (XmlNode track in trackList.ChildNodes)
+            {
+                XmlAttribute trackFile = track.Attributes["file"];
+                currentEconomic.Add(trackFile.Value);
+            }
+            if (Enumerable.SequenceEqual(currentMenu.OrderBy(e => e), knownIntrosVanilla.OrderBy(e => e)))
+            {
+                EconomicOldButton.FontWeight = FontWeights.Bold;
+            }
+            else if (Enumerable.SequenceEqual(currentMenu.OrderBy(e => e), knownIntrosTaP.OrderBy(e => e)))
+            {
+                EconomicNewButton.FontWeight = FontWeights.Bold;
+            }
         }
 
         private void ModifyXML(string categoryPath, List<string> categoryChoice)
@@ -308,6 +378,7 @@ namespace CBP_MT_Plugin
                     }
 
                     doc.Save(SoundXML);
+                    HighlightSelection();
                     MessageBox.Show("Sound.xml file updated successfully.");
                 }
                 else
