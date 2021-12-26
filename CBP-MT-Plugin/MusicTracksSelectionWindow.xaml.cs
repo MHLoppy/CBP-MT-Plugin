@@ -306,34 +306,34 @@ namespace CBP_MT_Plugin
                 MenuCombinedButton.FontWeight = FontWeights.Bold;
             }
 
-            // get current menu tracks, then compare if it matches any of the presets
+            // get current battle defeat tracks, then compare if it matches any of the presets
             trackList = doc.SelectSingleNode(@"ROOT/TRACKS/TRIBE/AGE/MOOD[2]");
             foreach (XmlNode track in trackList.ChildNodes)
             {
                 XmlAttribute trackFile = track.Attributes["file"];
                 currentLosing.Add(trackFile.Value);
             }
-            if (Enumerable.SequenceEqual(currentMenu.OrderBy(e => e), knownIntrosVanilla.OrderBy(e => e)))
+            if (Enumerable.SequenceEqual(currentLosing.OrderBy(e => e), knownDefeatVanilla.OrderBy(e => e)))
             {
                 LosingOldButton.FontWeight = FontWeights.Bold;
             }
-            else if (Enumerable.SequenceEqual(currentMenu.OrderBy(e => e), knownIntrosTaP.OrderBy(e => e)))
+            else if (Enumerable.SequenceEqual(currentLosing.OrderBy(e => e), knownDefeatTaP.OrderBy(e => e)))
             {
                 LosingNewButton.FontWeight = FontWeights.Bold;
             }
 
-            // get current menu tracks, then compare if it matches any of the presets
+            // get current battle victory tracks, then compare if it matches any of the presets
             trackList = doc.SelectSingleNode(@"ROOT/TRACKS/TRIBE/AGE/MOOD[3]");
             foreach (XmlNode track in trackList.ChildNodes)
             {
                 XmlAttribute trackFile = track.Attributes["file"];
                 currentEconomic.Add(trackFile.Value);
             }
-            if (Enumerable.SequenceEqual(currentMenu.OrderBy(e => e), knownIntrosVanilla.OrderBy(e => e)))
+            if (Enumerable.SequenceEqual(currentEconomic.OrderBy(e => e), knownEconomicVanilla.OrderBy(e => e)))
             {
                 EconomicOldButton.FontWeight = FontWeights.Bold;
             }
-            else if (Enumerable.SequenceEqual(currentMenu.OrderBy(e => e), knownIntrosTaP.OrderBy(e => e)))
+            else if (Enumerable.SequenceEqual(currentEconomic.OrderBy(e => e), knownEconomicTaP.OrderBy(e => e)))
             {
                 EconomicNewButton.FontWeight = FontWeights.Bold;
             }
@@ -365,6 +365,16 @@ namespace CBP_MT_Plugin
                 {
                     // wipe existing track list for this category
                     trackList.RemoveAll();
+
+                    // restore the mood description if applicable
+                    if (categoryChoice == knownDefeatVanilla || categoryChoice == knownDefeatTaP)
+                    {
+                        //set attribute
+                    }
+                    if (categoryChoice == knownEconomicVanilla || categoryChoice == knownEconomicTaP)
+                    {
+                        //set attribute
+                    }
 
                     // replace with new track list
                     foreach (string trackName in categoryChoice)
