@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CBP_MT_Plugin"
         mc:Ignorable="d"
-        Title="Music Tracks Selector" Width="690" Height="250" 
+        Title="Music Tracks Selector" Width="690" Height="300" 
         WindowStyle="SingleBorderWindow"
         ResizeMode="CanMinimize"
         MouseDown="Window_MouseDown"
@@ -18,6 +18,12 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+
         <!-- separators -->
         <Grid Grid.ColumnSpan="5">
             <Grid.ColumnDefinitions>
@@ -27,11 +33,10 @@
                 <ColumnDefinition Width="2"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            
+
             <Rectangle Grid.Column="1" Fill="Gray"/>
             <Rectangle Grid.Column="3" Fill="Gray"/>
         </Grid>
-
 
         <StackPanel Margin="0,5,0,5" Grid.Column="0" HorizontalAlignment="Center">
             <TextBlock Text="Menu" FontSize="20" FontWeight="SemiBold" HorizontalAlignment="Center"/>
@@ -52,6 +57,13 @@
             <Button Name="EconomicOldButton" Width="180" Height="40" Margin="0,10,0,10" FontSize="16" Content="Original RoN (2003)" Click="EconomicOldButton_Click"/>
             <Button Name="EconomicNewButton" Width="180" Height="50" Margin="0,10,0,10" FontSize="16" Content="T&amp;P/EE (2004/2014)" Click="EconomicNewButton_Click"/>
             <TextBlock Text="In this category, original tracks are already part of the T&amp;P/EE tracklists by default." TextWrapping="Wrap" HorizontalAlignment="Center" FontStyle="Italic"/>
+        </StackPanel>
+
+        <Rectangle Grid.Row="1" Grid.ColumnSpan="3" Fill="Gray"/>
+
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="3">
+            <TextBlock  Text="Current selection for each category is highlighted (if using custom tracks, your track list won't match any of the options)."/>
+            <TextBlock  Text="Rise of Babel users may note that their default music tracklists are from the original game instead of T&amp;P/EE (a bug with RoB)." Margin="0,6,0,0"/>
         </StackPanel>
     </Grid>
 </Window>
