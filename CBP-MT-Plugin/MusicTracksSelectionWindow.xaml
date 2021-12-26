@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CBP_MT_Plugin"
         mc:Ignorable="d"
-        Title="Music Tracks Selector" Width="690" Height="380" 
+        Title="Music Tracks Selector" Width="690" Height="400" 
         WindowStyle="SingleBorderWindow"
         ResizeMode="CanMinimize"
         MouseDown="Window_MouseDown"
@@ -19,7 +19,7 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="75"/>
+            <RowDefinition Height="100"/>
             <RowDefinition Height="2"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
@@ -28,6 +28,7 @@
         <!-- Explanatory text at top -->
         <StackPanel Grid.ColumnSpan="3">
             <TextBlock Padding="58,20,52,0" FontSize="15" Text="Use the buttons to select your preferred tracklists for the selected music categories. (Other categories are not included because their music is the same between versions)" TextWrapping="Wrap"/>
+            <TextBlock Padding="58,12,52,0" FontSize="15" Text="All available presets are multiplayer compatible." TextWrapping="Wrap"/>
         </StackPanel>
 
         <!-- separators -->
@@ -51,7 +52,7 @@
             <TextBlock Text="Menu" FontSize="20" FontWeight="SemiBold" HorizontalAlignment="Center"/>
             <Button Name="MenuOldButton" Width="180" Height="40" Margin="0,10,0,10" FontSize="16" Content="Original RoN (2003)" Click="MenuOldButton_Click"/>
             <Button Name="MenuNewButton" Width="180" Height="40" Margin="0,10,0,10" FontSize="16" Content="T&amp;P/EE (2004/2014)" Click="MenuNewButton_Click"/>
-            <Button Name="MenuCombinedButton" Width="180" Height="40" Margin="0,10,0,10" FontSize="16" Content="Combined tracklists" Click="MenuCombinedButton_Click"/>
+            <Button Name="MenuCombinedButton" Width="180" Height="40" Margin="0,10,0,10" FontSize="16" Content="Both lists combined" Click="MenuCombinedButton_Click"/>
         </StackPanel>
 
         <StackPanel Margin="0,5,0,5" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center">
