@@ -53,9 +53,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MusicTracksPlugin.cs" />
-    <Compile Include="MusicTracksSelectionControl.xaml.cs">
-      <DependentUpon>MusicTracksSelectionControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="MusicTracksSelectionWindow.xaml.cs">
       <DependentUpon>MusicTracksSelectionWindow.xaml</DependentUpon>
     </Compile>
@@ -82,10 +79,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="MusicTracksSelectionControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MusicTracksSelectionWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
