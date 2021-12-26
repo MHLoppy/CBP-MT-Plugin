@@ -23,7 +23,7 @@ namespace CBP_MT_Plugin
 
         public string PluginDescription => "Graphical interface (GUI) to customise music in RoN:EE - originally created to bugfix a music bug in the Rise of Babel taunt pack.\n\n"
             + "To reconfigure the tracks again, reload the plugin."
-            + "\n\nSource code: <link>";
+            + "\n\nSource code: https://github.com/MHLoppy/CBP-MT-Plugin";
 
         public bool IsSimpleMod => false;
 
