@@ -370,11 +370,17 @@ namespace CBP_MT_Plugin
                     // restore the mood description if applicable
                     if (categoryChoice == knownDefeatVanilla || categoryChoice == knownDefeatTaP)
                     {
-                        //set attribute
+                        XmlNode battleDefeat = doc.SelectSingleNode("ROOT/TRACKS/TRIBE/AGE/MOOD[2]");
+                        XmlAttribute mood = doc.CreateAttribute("mood");
+                        mood.Value = "BATTLE_DEFEAT";
+                        battleDefeat.Attributes.Append(mood);
                     }
                     if (categoryChoice == knownEconomicVanilla || categoryChoice == knownEconomicTaP)
                     {
-                        //set attribute
+                        XmlNode battleDefeat = doc.SelectSingleNode("ROOT/TRACKS/TRIBE/AGE/MOOD[3]");
+                        XmlAttribute mood = doc.CreateAttribute("mood");
+                        mood.Value = "ECONOMIC";
+                        battleDefeat.Attributes.Append(mood);
                     }
 
                     // replace with new track list
