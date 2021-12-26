@@ -1,0 +1,57 @@
+﻿<Window x:Class="CBP_MT_Plugin.MusicTracksSelectionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CBP_MT_Plugin"
+        mc:Ignorable="d"
+        Title="Music Tracks Selector" Width="690" Height="250" 
+        WindowStyle="SingleBorderWindow"
+        ResizeMode="CanMinimize"
+        MouseDown="Window_MouseDown"
+        WindowStartupLocation="CenterScreen">
+    <!--Title="Music Tracks Selector" Height="550" Width="860"-->
+    <Grid Background="#F0F0F0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- separators -->
+        <Grid Grid.ColumnSpan="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Rectangle Grid.Column="1" Fill="Gray"/>
+            <Rectangle Grid.Column="3" Fill="Gray"/>
+        </Grid>
+
+
+        <StackPanel Margin="0,5,0,5" Grid.Column="0" HorizontalAlignment="Center">
+            <TextBlock Text="Menu" FontSize="20" FontWeight="SemiBold" HorizontalAlignment="Center"/>
+            <Button Name="MenuOldButton" Width="180" Height="40" Margin="0,10,0,10" FontSize="16" Content="Original RoN (2003)" Click="MenuOldButton_Click"/>
+            <Button Name="MenuNewButton" Width="180" Height="40" Margin="0,10,0,10" FontSize="16" Content="T&amp;P/EE (2004/2014)" Click="MenuNewButton_Click"/>
+            <Button Name="MenuCombinedButton" Width="180" Height="40" Margin="0,10,0,10" FontSize="16" Content="Combine both tracklists" Click="MenuCombinedButton_Click"/>
+        </StackPanel>
+
+        <StackPanel Margin="0,5,0,5" Grid.Column="1" HorizontalAlignment="Center">
+            <TextBlock Text="Losing Battle" FontSize="20" FontWeight="SemiBold" HorizontalAlignment="Center"/>
+            <Button Name="LosingOldButton" Width="180" Height="40" Margin="0,10,0,10" FontSize="16" Content="Original RoN (2003)" Click="LosingOldButton_Click"/>
+            <Button Name="LosingNewButton" Width="180" Height="50" Margin="0,10,0,10" FontSize="16" Content="T&amp;P/EE (2004/2014)" Click="LosingNewButton_Click"/>
+            <TextBlock Text="In this category, original tracks are already part of the T&amp;P/EE tracklists by default." TextWrapping="Wrap" HorizontalAlignment="Center" FontStyle="Italic"/>
+        </StackPanel>
+
+        <StackPanel Margin="0,5,0,5" Grid.Column="2" HorizontalAlignment="Center">
+            <TextBlock Text="Economic" FontSize="20" FontWeight="SemiBold" HorizontalAlignment="Center"/>
+            <Button Name="EconomicOldButton" Width="180" Height="40" Margin="0,10,0,10" FontSize="16" Content="Original RoN (2003)" Click="EconomicOldButton_Click"/>
+            <Button Name="EconomicNewButton" Width="180" Height="50" Margin="0,10,0,10" FontSize="16" Content="T&amp;P/EE (2004/2014)" Click="EconomicNewButton_Click"/>
+            <TextBlock Text="In this category, original tracks are already part of the T&amp;P/EE tracklists by default." TextWrapping="Wrap" HorizontalAlignment="Center" FontStyle="Italic"/>
+        </StackPanel>
+    </Grid>
+</Window>
