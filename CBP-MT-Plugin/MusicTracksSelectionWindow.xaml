@@ -19,16 +19,15 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="100"/>
+            <RowDefinition Height="75"/>
             <RowDefinition Height="2"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="25"/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
         <!-- Explanatory text at top -->
         <StackPanel Grid.ColumnSpan="3">
             <TextBlock Padding="58,20,52,0" FontSize="15" Text="Use the buttons to select your preferred tracklists for the selected music categories. (Other categories are not included because their music is the same between versions)" TextWrapping="Wrap"/>
-            <TextBlock Padding="58,0,52,0" Text="Rise of Babel users may have tracklists from the original game instead of T&amp;P/EE (which is a bug with RoB)." Margin="0,8,0,0"/>
         </StackPanel>
 
         <!-- separators -->
@@ -37,14 +36,14 @@
         <Grid Grid.ColumnSpan="5" Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="1.5"/>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="1.5"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Rectangle Grid.Column="1" Height="100" Fill="#AACCCCCC"/>
-            <Rectangle Grid.Column="3" Height="100" Fill="#AACCCCCC"/>
+            <Rectangle Grid.Column="1" Height="100" Fill="#CCCCCCCC"/>
+            <Rectangle Grid.Column="3" Height="100" Fill="#CCCCCCCC"/>
         </Grid>
 
         <!-- Main button sections -->
@@ -70,7 +69,8 @@
         </StackPanel>
 
         <StackPanel Grid.Row="3" Grid.ColumnSpan="3">
-            <TextBlock Padding="8,0,0,0" Text="The current selection for each category is in bold (if using custom tracks, your tracklist won't match any of the options)." FontStyle="Italic"/>
+            <TextBlock Padding="0,0,0,0" HorizontalAlignment="Center" Text="The current selection for each category is in bold (if using custom tracks, your tracklist won't match any of the options)." FontStyle="Italic"/>
+            <TextBlock Padding="0,0,0,0" HorizontalAlignment="Center" Text="Rise of Babel users may have tracklists from the original game instead of T&amp;P/EE (which is a bug with RoB)." Margin="0,8,0,0" FontStyle="Italic"/>
         </StackPanel>
     </Grid>
 </Window>
