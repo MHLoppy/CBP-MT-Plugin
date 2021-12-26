@@ -216,6 +216,7 @@ namespace CBP_MT_Plugin
                     @".\sounds\tracks\SimpleSong.wav",
                     @".\sounds\tracks\SriLanka.wav",
                     @".\sounds\tracks\WingAndAPrayer.wav",
+                    @".\sounds\tracks\SacrificeToTheSun.wav",
                     @".\sounds\tracks\PeacePipe.wav",
                     @".\sounds\tracks\Rockets.wav",
                     @".\sounds\tracks\Bengal.wav",
