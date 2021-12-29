@@ -13,7 +13,7 @@ namespace CBP_MT_Plugin
     {
         public string PluginTitle => "Music Track Selector";
 
-        public string PluginVersion => "0.4.4";
+        public string PluginVersion => "0.4.5";
 
         public string PluginAuthor => "MHLoppy";
 
@@ -127,8 +127,8 @@ namespace CBP_MT_Plugin
 
                 File.WriteAllText(loadedMTP, "0");
                 CheckIfLoaded();
-                LoadResult = (PluginTitle + ": Original sound.xml file has been restored.");
-                MessageBox.Show("Original sound.xml file has been restored.");
+                LoadResult = (PluginTitle + ": Previous sound.xml file has been restored.");
+                MessageBox.Show("Previous sound.xml file has been restored.");
             }
             catch (Exception ex)
             {
