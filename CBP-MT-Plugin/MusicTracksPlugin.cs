@@ -13,7 +13,7 @@ namespace CBP_MT_Plugin
     {
         public string PluginTitle => "Music Track Selector";
 
-        public string PluginVersion => "0.4.3";
+        public string PluginVersion => "0.4.4";
 
         public string PluginAuthor => "MHLoppy";
 
@@ -66,7 +66,7 @@ namespace CBP_MT_Plugin
                 {
                     File.WriteAllText(loadedMTP, "0");
                     LoadResult = (PluginTitle + " completed first time setup successfully. Created file:\n" + loadedMTP);
-                    MessageBox.Show(PluginTitle + ": Created file:\n" + loadedMTP);
+                    //MessageBox.Show(PluginTitle + ": Created file:\n" + loadedMTP);//removed to reduce number of popups for first-time CBP users
                 }
                 catch (Exception ex)
                 {
