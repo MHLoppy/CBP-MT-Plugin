@@ -10,9 +10,9 @@ using System.Windows;
 [assembly: AssemblyTitle("CBP-MT-Plugin")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("MHLoppy")]
 [assembly: AssemblyProduct("CBP-MT-Plugin")]
-[assembly: AssemblyCopyright("Copyright ©  2021")]
+[assembly: AssemblyCopyright("Copyright © MHLoppy 2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
